@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
+ 
+    <bean id="ITestTableDAOImpl" class="com.bloodysin.scoremanagement.impl.ITestTableDAOImpl"> 
+        <property name="session" ref="sqlSession" /> 
+    </bean> 
+    <bean id="TestService" class="com.bloodysin.scoremanagement.service.TestService"> 
+        <property name="testDAO" ref="ITestTableDAOImpl" /> 
+    </bean> 
+    
+    <bean id="UserDAOImpl" class="com.bloodysin.scoremanagement.impl.UserDAOImpl">
+    	<property name="session" ref="sqlSession" />
+    </bean>
+    <bean id="UserService" class="com.bloodysin.scoremanagement.service.UserService">
+    	<property name="userDAO" ref="UserDAOImpl" />
+    </bean>
+    	
+    <bean id="ScoreTableDAOImpl" class="com.bloodysin.scoremanagement.impl.ScoreTableDAOImpl">
+    	<property name="session" ref="sqlSession" />
+    </bean>
+    <bean id="ScoreTableService" class="com.bloodysin.scoremanagement.service.ScoreTableService">
+    	<property name="scoreTableDAO" ref="ScoreTableDAOImpl" />
+    </bean>
+    
+    <bean id="CourseDAOImpl" class="com.bloodysin.scoremanagement.impl.CourseDAOImpl">
+    	<property name="session" ref="sqlSession" />
+    </bean>
+    <bean id="CourseService" class="com.bloodysin.scoremanagement.service.CourseService">
+    	<property name="courseDAO" ref="CourseDAOImpl" />
+    </bean>
+    
+    <bean id="StudentScoreDAOImpl" class="com.bloodysin.scoremanagement.impl.StudentScoreDAOImpl">
+    	<property name="session" ref="sqlSession" />
+    </bean>
+    <bean id="StudentScoreService" class="com.bloodysin.scoremanagement.service.StudentScoreService">
+    	<property name="studentScoreDAO" ref="StudentScoreDAOImpl" />
+    </bean>
+    
+    <bean id="ScoreDAOImpl" class="com.bloodysin.scoremanagement.impl.ScoreDAOImpl">
+    	<property name="session" ref="sqlSession" />
+    </bean>
+    <bean id="ScoreService" class="com.bloodysin.scoremanagement.service.ScoreService">
+    	<property name="scoreDAO" ref="ScoreDAOImpl" />
+    </bean>
+</beans>

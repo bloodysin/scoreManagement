@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE configuration 
+PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-config.dtd"> 
+<configuration> 
+    <typeAliases> 
+        <typeAlias type="com.bloodysin.scoremanagement.model.TestTable" alias="Test" />
+        <typeAlias type="com.bloodysin.scoremanagement.model.User" alias="User" />
+        <typeAlias type="com.bloodysin.scoremanagement.model.ScoreTable" alias="ScoreTable" />
+        <typeAlias type="com.bloodysin.scoremanagement.model.Course" alias="Course" />
+        <typeAlias type="com.bloodysin.scoremanagement.model.StudentScore" alias="StudentScore" />
+        <typeAlias type="com.bloodysin.scoremanagement.model.Score" alias="Score" />
+    </typeAliases> 
+    <mappers> 
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/TestMapper.xml" /> 
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/UserMapper.xml" /> 
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/ScoreTableMapper.xml" />
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/CourseMapper.xml" />
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/StudentScoreMapper.xml" />
+        <mapper resource="com/bloodysin/scoremanagement/mybatis/mapper/ScoreMapper.xml" />
+    </mappers> 
+</configuration>

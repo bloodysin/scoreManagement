@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+<mapper namespace="com.bloodysin.scoremanagement.mapper.ScoreMapper">
+
+	<insert id="insertScore" parameterType="Score" > 
+        INSERT INTO score (user_id, course_id, value) 
+        VALUES(#{userId},#{courseId}, "0") 
+    </insert> 
+    
+    <update id="updateScore" parameterType="Score" > 
+        UPDATE score SET value=#{value}
+        where user_id=#{userId}
+    </update> 
+</mapper>

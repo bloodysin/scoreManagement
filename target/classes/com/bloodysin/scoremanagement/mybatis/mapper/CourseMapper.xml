@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper 
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+<mapper namespace="com.bloodysin.scoremanagement.mapper.CourseMapper">
+	<resultMap type="com.bloodysin.scoremanagement.model.Course" id="courseResultMap">
+	     <id property="courseName" column="course_name" />
+	     <result property="courseId" column="course_id" />
+	     <result property="userId" column="user_id" />
+	</resultMap>
+	
+	<insert id="insertCourse" parameterType="Course" > 
+        INSERT INTO course (course_name, user_id) 
+        VALUES(#{courseName}, #{userId}) 
+    </insert> 
+
+    <select id="getCourseList" parameterType="int" resultMap="courseResultMap"> 
+        <![CDATA[        
+        	SELECT * FROM course
+    		WHERE user_id = #{userId}
+        ]]>	
+    </select> 
+</mapper>
